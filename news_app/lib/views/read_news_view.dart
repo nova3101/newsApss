@@ -1,7 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:news_app/widgets/constantas.dart';
+import 'package:news_app/constants.dart';
 import 'package:news_app/models/news.dart';
 import 'package:news_app/widgets/circle_button.dart';
 
@@ -78,7 +76,7 @@ class ReadNewsView extends StatelessWidget {
                       ),
                       SizedBox(width: 6.0),
                       Text(
-                        news.category,
+                        news.category.name,
                         style: kCategoryTitle,
                       ),
                     ],

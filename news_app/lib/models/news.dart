@@ -1,8 +1,10 @@
+import 'dart:math';
+import 'package:news_app/models/source.dart';
 class News {
   final String title;
   final String subtitle;
   final String content;
-  final String category;
+  final Source category;
   final String time;
   final String author;
   final String seen;
@@ -22,13 +24,28 @@ class News {
     this.time,
     this.title,
   });
-}
 
+  factory News.fromJson(Map<String, dynamic> json) {
+    return News(
+       author: json['author'] ?? "",
+       content: json['content'] ?? "",
+       category: Source.fromJson(json['source']),
+       estimate: '3',
+       favorite: '10 K',
+       image: json['urlToImage'] ?? "",
+       seen: (Random() .nextInt(100) +1).toString() + 'k',
+       subtitle: json['description'] ?? "",
+       time: json['publishedAt'] ?? "",
+       title: json['title'] ?? ""
+    );
+  }
+}
+var _category = Source(id: 'null', name: 'Unknown');
 List<News> popularList = [
   News(
     author: "Nick Chong",
     estimate: "3",
-    category: "Bitcoin",
+    category: _category,
     favorite: "700",
     seen: "4.5K",
     time: "4 hours ago",
@@ -44,7 +61,7 @@ List<News> popularList = [
   News(
     author: "BBC News",
     estimate: "5",
-    category: "Business",
+    category: _category,
     favorite: "502",
     seen: "1.2K",
     time: "10 hours ago",
@@ -60,7 +77,7 @@ List<News> popularList = [
   News(
     author: "Jon Fingas",
     estimate: "12",
-    category: "Tech",
+    category: _category,
     favorite: "23K",
     seen: "40.5K",
     time: "12 Hours ago",
@@ -76,7 +93,7 @@ List<News> popularList = [
   News(
     author: "Kirsten Korosec",
     estimate: "8",
-    category: "Tech",
+    category: _category,
     favorite: "12K",
     seen: "30K",
     time: "22 Hours ago",
@@ -91,7 +108,7 @@ List<News> popularList = [
   News(
     author: "Darrell Etherington",
     estimate: "6",
-    category: "Tech",
+    category: _category,
     favorite: "21K",
     seen: "40.2K",
     time: "8 Hours ago",
@@ -110,7 +127,7 @@ List<News> trendingList = [
   News(
     author: "Nick Chong",
     estimate: "3",
-    category: "Bitcoin",
+    category: _category,
     favorite: "700",
     seen: "4.51K",
     time: "4 hours ago",
@@ -126,7 +143,7 @@ List<News> trendingList = [
   News(
     author: "BBC News",
     estimate: "5",
-    category: "Business",
+    category: _category,
     favorite: "502",
     seen: "1.21K",
     time: "10 hours ago",
@@ -142,7 +159,7 @@ List<News> trendingList = [
   News(
     author: "Jon Fingas",
     estimate: "12",
-    category: "Tech",
+    category: _category,
     favorite: "23K",
     seen: "40.51K",
     time: "12 Hours ago",
@@ -158,7 +175,7 @@ List<News> trendingList = [
   News(
     author: "Kirsten Korosec",
     estimate: "8",
-    category: "Tech",
+    category: _category,
     favorite: "12K",
     seen: "30.1K",
     time: "22 Hours ago",
@@ -173,7 +190,7 @@ List<News> trendingList = [
   News(
     author: "Darrell Etherington",
     estimate: "6",
-    category: "Tech",
+    category: _category,
     favorite: "21K",
     seen: "41.5K",
     time: "8 Hours ago",
@@ -191,7 +208,7 @@ List<News> recentList = [
   News(
     author: "Nick Chong",
     estimate: "3",
-    category: "Bitcoin",
+    category: _category,
     favorite: "700",
     seen: "41.51K",
     time: "4 hours ago",
@@ -207,7 +224,7 @@ List<News> recentList = [
   News(
     author: "BBC News",
     estimate: "5",
-    category: "Business",
+    category: _category,
     favorite: "502",
     seen: "11.21K",
     time: "10 hours ago",
@@ -223,7 +240,7 @@ List<News> recentList = [
   News(
     author: "Jon Fingas",
     estimate: "12",
-    category: "Tech",
+    category: _category,
     favorite: "213K",
     seen: "41.51K",
     time: "12 Hours ago",
@@ -239,7 +256,7 @@ List<News> recentList = [
   News(
     author: "Kirsten Korosec",
     estimate: "8",
-    category: "Tech",
+    category: _category,
     favorite: "12K",
     seen: "31.1K",
     time: "22 Hours ago",
@@ -253,7 +270,7 @@ List<News> recentList = [
   News(
     author: "Darrell Etherington",
     estimate: "6",
-    category: "Tech",
+    category: _category,
     favorite: "21K",
     seen: "42.5K",
     time: "8 Hours ago",

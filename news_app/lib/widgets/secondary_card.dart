@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/news.dart';
-import 'package:news_app/widgets/constantas.dart';
+import 'package:news_app/constants.dart';
 
 class SecondaryCard extends StatelessWidget {
   final News news;

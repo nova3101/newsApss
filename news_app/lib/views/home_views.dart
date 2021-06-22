@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/widgets/constantas.dart';
+import 'package:news_app/constants.dart';
 import 'package:news_app/views/popular_tab_view.dart';
 import 'package:news_app/views/recent_tab_view.dart';
 import 'package:news_app/views/trending_tab_view.dart';
@@ -59,7 +59,7 @@ class HomeView extends StatelessWidget {
         body: TabBarView(
           children: [
             PopularTabView(),
-            TrendingTabview(),
+            TrendingTabView(),
             RecentTabView(),
           ],
         ),
