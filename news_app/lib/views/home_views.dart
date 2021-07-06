@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
                   style: kNonActiveTabStyle,
                 ),
                 subtitle: Text(
-                  "Jessica Veranda",
+                  "Nova Cantika fitri",
                   textAlign: TextAlign.end,
                   style: kActiveTabStyle,
                 ),
@@ -31,7 +31,7 @@ class HomeView extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       image: DecorationImage(
-                        image: AssetImage("assets/ve.jpg"),
+                        image: AssetImage("assets/Nova.jpeg"),
                         fit: BoxFit.cover,
                       )),
                 ),
